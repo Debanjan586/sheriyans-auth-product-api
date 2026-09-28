@@ -1,30 +1,3 @@
-/**
- * api.js — single place that talks to the backend.
- *
- * Why this file exists:
- * The backend issues a short-lived Access Token (15 min, JWT) that we must
- * send on every protected request in the "Authorization: Bearer <token>"
- * header, and a long-lived Refresh Token (7 days) that the backend sets
- * itself as an httpOnly cookie — JS can never read it, only the browser
- * sends it automatically when we call fetch with credentials: "include".
- *
- * Flow:
- *  1. login/register -> backend returns { accessToken, user } in the JSON
- *     body + sets the refreshToken cookie. We keep accessToken in memory
- *     (a plain JS variable) and mirror it into sessionStorage so a page
- *     refresh doesn't instantly log the user out.
- *  2. Every request goes through apiFetch(), which attaches the header.
- *  3. If a request comes back 401 (access token expired), we call
- *     /api/auth/refresh-token ONCE, which reads the refreshToken cookie
- *     server-side and hands back a new access token. We retry the
- *     original request with the new token.
- *  4. If the refresh itself fails, the refresh token is dead/expired ->
- *     we clear state and send the user to login.html.
- */
-
-// Points at the backend from server.js (app.listen(7930, ...)).
-// Change this to your deployed backend URL when you go live, or to ""
-// if you ever serve this frontend from the same origin as the API.
 const API_BASE_URL = "";
 
 const ACCESS_TOKEN_KEY = "accessToken";

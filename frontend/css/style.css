@@ -47,6 +47,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 body.nav-open-lock {
@@ -234,7 +235,6 @@ a { color: inherit; }
 /* ---------- Layout ---------- */
 
 .container {
-  max-width: 1080px;
   margin: 0 auto;
   padding: 40px 28px 72px;
   width: 100%;
@@ -512,12 +512,13 @@ input.invalid, textarea.invalid {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 340px;
+  width: 240px;
 }
 
 .toast {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 13px 16px;
   border-radius: 12px;
@@ -526,9 +527,9 @@ input.invalid, textarea.invalid {
   border: 1px solid var(--border);
   font-size: 0.87rem;
   font-weight: 600;
-  animation: toast-in 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: toast-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.toast.hide { animation: toast-out 0.22s ease forwards; }
+.toast.hide { animation: toast-out 0.8s ease forwards; }
 .toast .toast-icon { flex-shrink: 0; margin-top: 1px; }
 .toast-error { border-left: 3px solid var(--danger); }
 .toast-error .toast-icon { color: var(--danger); }
@@ -572,7 +573,7 @@ input.invalid, textarea.invalid {
 .product-card .thumb {
   position: relative;
   width: 100%;
-  height: 172px;
+  height: 300px;
   overflow: hidden;
   background: var(--bg-alt);
 }
@@ -799,7 +800,7 @@ input.invalid, textarea.invalid {
   }
 
   .nav-links {
-    position: fixed;
+    position:absolute;
     top: 0;
     right: 0;
     height: 100vh;
@@ -813,7 +814,7 @@ input.invalid, textarea.invalid {
     transform: translateX(100%);
     transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 50;
-    overflow-y: auto;
+    overflow-y:hidden;
   }
 
   .nav-links.open {
@@ -859,7 +860,7 @@ input.invalid, textarea.invalid {
 
 @media (max-width: 560px) {
   .navbar { padding: 12px 16px; }
-  .container { padding: 28px 16px 56px; }
+  .container { padding: 28px 16px 56px;overflow-X: hidden; }
   .auth-container { padding: 30px 22px; border-radius: var(--radius); box-shadow: none; border: none; }
   .auth-form-side { padding: 20px 12px; }
 }

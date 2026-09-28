@@ -70,7 +70,8 @@ function setupNavToggle() {
     toggle.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
     toggle.innerHTML = ICONS.menu;
-    document.body.classList.remove("nav-open-lock");
+document.documentElement.classList.remove("nav-open-lock");
+document.body.classList.remove("nav-open-lock");
   };
 
   const openMenu = () => {
@@ -79,7 +80,8 @@ function setupNavToggle() {
     toggle.classList.add("open");
     toggle.setAttribute("aria-expanded", "true");
     toggle.innerHTML = ICONS.close;
-    document.body.classList.add("nav-open-lock");
+document.documentElement.classList.add("nav-open-lock");
+document.body.classList.add("nav-open-lock");
   };
 
   toggle.addEventListener("click", () => {

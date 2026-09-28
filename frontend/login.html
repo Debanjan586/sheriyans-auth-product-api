@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login - ShopAPI</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="auth-shell">
+    <div class="auth-visual">
+      <div class="visual-top">
+        <span class="visual-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 8v8a2 2 0 0 1-1 1.73l-7 4a2 2 0 0 1-2 0l-7-4A2 2 0 0 1 3 16V8a2 2 0 0 1 1-1.73l7-4a2 2 0 0 1 2 0l7 4A2 2 0 0 1 21 8Z" stroke="currentColor" stroke-width="1.8"/></svg>
+        </span>
+        ShopAPI
+      </div>
+
+      <div>
+        <div class="visual-headline">Welcome back. Your products are right where you left them.</div>
+        <div class="visual-sub">Secure JWT authentication with automatic session refresh — sign in once and stay in.</div>
+      </div>
+
+      <div class="visual-cards">
+        <div class="mini-card">
+          <span class="mini-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4Z" stroke="#fff" stroke-width="1.7"/></svg></span>
+          Encrypted access + refresh tokens
+        </div>
+        <div class="mini-card">
+          <span class="mini-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 8v8a2 2 0 0 1-1 1.73l-7 4a2 2 0 0 1-2 0l-7-4A2 2 0 0 1 3 16V8a2 2 0 0 1 1-1.73l7-4a2 2 0 0 1 2 0l7 4A2 2 0 0 1 21 8Z" stroke="#fff" stroke-width="1.7"/></svg></span>
+          Full product catalog CRUD
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-form-side">
+      <div class="auth-container">
+        <div class="eyebrow">Sign in</div>
+        <h2>Log in to your account</h2>
+        <p class="subtitle" style="margin-bottom:6px;">Enter your credentials to continue.</p>
+        <div id="formAlert"></div>
+
+        <form id="loginForm" novalidate>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+          <div class="field-error" id="err-email"></div>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" placeholder="••••••••" />
+          <div class="field-error" id="err-password"></div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submitBtn" style="margin-top:24px;">Log in</button>
+        </form>
+
+        <div class="auth-switch">Don't have an account? <a href="register.html">Create one</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

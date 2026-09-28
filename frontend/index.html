@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Products - ShopAPI</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="container">
+    <div class="page-header">
+      <div>
+        <div class="eyebrow">Catalog</div>
+        <h1>Products</h1>
+        <p class="subtitle">Browse, add, edit and remove products.</p>
+      </div>
+      <a href="add-product.html" class="btn btn-primary" id="addBtn" style="display:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        Add Product
+      </a>
+    </div>
+
+    <div id="alertBox"></div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

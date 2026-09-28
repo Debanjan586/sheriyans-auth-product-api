@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Add Product - ShopAPI</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="container">
+    <div class="page-header">
+      <div>
+        <div class="eyebrow">New product</div>
+        <h1>Add Product</h1>
+        <p class="subtitle">Fill in the details below to list a new product.</p>
+      </div>
+    </div>
+
+    <div id="formAlert"></div>
+
+    <form id="productForm" class="form-layout" novalidate>
+      <div class="form-card">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="e.g. Wireless Headphones" />
+        <div class="field-error" id="err-title"></div>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" placeholder="Short description of the product"></textarea>
+        <div class="field-error" id="err-description"></div>
+
+        <label for="price">Price</label>
+        <div class="price-input-wrap">
+          <span class="currency">₹</span>
+          <input type="number" id="price" name="price" step="0.01" min="0" placeholder="0.00" />
+        </div>
+        <div class="field-error" id="err-price"></div>
+
+        <div class="form-actions">
+          <a href="index.html" class="btn btn-ghost">Cancel</a>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Create product</button>
+        </div>
+      </div>
+
+      <div class="upload-card">
+        <h3>Product image</h3>
+        <p class="helper-text" style="margin-top:0;">JPG or PNG, up to 5MB.</p>
+        <div class="dropzone" id="dropzone">
+          <input type="file" id="image" name="image" accept="image/*" />
+          <div class="placeholder" id="dropPlaceholder">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0-4 4m4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span>Click to upload an image</span>
+          </div>
+          <img id="imagePreview" class="image-preview" alt="Preview" />
+        </div>
+        <div class="field-error" id="err-image"></div>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/product-form.js"></script>
+</body>
+</html>
